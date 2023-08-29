@@ -2,6 +2,7 @@ package list.OperacaoBasica.ListaDeTarefas;
 
 public class BlocoDeNotas{
     public static void main(String[] args) {
+
         //Instanciando uma Lista de Tarefas
         ListaTarefa listaTarefa = new ListaTarefa();
 
