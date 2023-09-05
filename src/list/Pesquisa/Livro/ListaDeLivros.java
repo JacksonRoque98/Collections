@@ -6,27 +6,27 @@ public class ListaDeLivros {
         CatalogoDeLivros catalogoDeLivros = new CatalogoDeLivros();
 
         // Adicionando livros ao catálogo
-        catalogoDeLivros.adicionarLivro("Microsserviços Prontos Para a Produção", "Susan J. Fowler", 2017);
-        catalogoDeLivros.adicionarLivro("Java Guia do Programador", "Peter Jandl Junior", 2021);
-        catalogoDeLivros.adicionarLivro("Código Limpo", "Robert C. Martin", 2009);
-        catalogoDeLivros.adicionarLivro("O Codificador Limpo", "Robert C. Martin", 2012);
+        catalogoDeLivros.adicionarLivro("Livro 1", "Autor 1", 2020);
+        catalogoDeLivros.adicionarLivro("Livro 1", "Autor 2", 2021);
+        catalogoDeLivros.adicionarLivro("Livro 3", "Autor 2", 2022);
+        catalogoDeLivros.adicionarLivro("Livro 4", "Autor 3", 2023);
+        catalogoDeLivros.adicionarLivro("Livro 5", "Autor 4", 1994);
 
         // Exibindo livros pelo mesmo autor
-        System.out.println(catalogoDeLivros.pesquisarPorAutor("Robert C. Martin"));
-
-        // Exibindo livros pelo mesmo autor (caso em que não há livros de um autor específico)
-        System.out.println(catalogoDeLivros.pesquisarPorAutor("Autor Inexistente"));
+        System.out.println("Livros do mesmo autor:");
+        System.out.println(catalogoDeLivros.pesquisarPorAutor("Autor 3"));
 
         // Exibindo livros dentro de um intervalo de anos
-        System.out.println(catalogoDeLivros.pesquisarIntervaloAnos(2010, 2022));
+        System.out.println("Livros por intervalo de anos:");
+        System.out.println(catalogoDeLivros.pesquisarIntervaloAnos(2020, 2022));
 
         // Exibindo livros dentro de um intervalo de anos (caso em que não há livros no intervalo)
+        System.out.println("Livros por intervalo de anos:");
         System.out.println(catalogoDeLivros.pesquisarIntervaloAnos(2025, 2030));
 
-        // Exibindo livros por título
-        System.out.println(catalogoDeLivros.pesquisarPorTitulo("Java Guia do Programador"));
+        // Exibindo livro por título
+        System.out.println("Livros por titulo:");
+        System.out.println(catalogoDeLivros.pesquisarPorTitulo("Livro 1"));
 
-        // Exibindo livros por título (caso em que não há livros com o título especificado)
-        System.out.println(catalogoDeLivros.pesquisarPorTitulo("Título Inexistente"));
     }
 }

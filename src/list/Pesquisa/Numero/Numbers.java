@@ -11,18 +11,19 @@ public class Numbers {
         somaNumeros.adicionarNumero(0);
         somaNumeros.adicionarNumero(-2);
         somaNumeros.adicionarNumero(10);
+        somaNumeros.adicionarNumero(27);
 
         // Exibindo a lista de números adicionados
         System.out.println("Números adicionados:");
         somaNumeros.exibirNumeros();
-
-        // Calculando e exibindo a soma dos números na lista
-        System.out.println("Soma dos números = " + somaNumeros.calcularSoma());
 
         // Encontrando e exibindo o maior número na lista
         System.out.println("Maior número = " + somaNumeros.maiorNumero());
 
         // Encontrando e exibindo o menor número na lista
         System.out.println("Menor número = " + somaNumeros.menorNumero());
+
+        // Calculando e exibindo a soma dos números na lista
+        System.out.println("Soma dos números = " + somaNumeros.calcularSoma());
     }
 }

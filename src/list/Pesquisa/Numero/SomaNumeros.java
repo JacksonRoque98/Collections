@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SomaNumeros {
-
+    //Instanciando uma lista de numeros
     private List<Integer> numeros;
-
+    //Instanciando o construtor
     public SomaNumeros(){
         this.numeros = new ArrayList<>();
     }
-
+    //Adicionando numeros a lista
     public void adicionarNumero(Integer numero){
         this.numeros.add(numero);
     }
-
+    //Somando todos os numeros da lista
     public int calcularSoma() {
         int soma = 0;
         for (Integer numero : numeros) {
@@ -22,35 +22,31 @@ public class SomaNumeros {
         }
         return soma;
     }
-
+    //Verificando o maior numero
     public int maiorNumero(){
-        int maiorNumero = Integer.MIN_VALUE;
+        int maiorNumero = 0;
         if(!numeros.isEmpty()){
-            for(Integer numero : numeros){
-                if(numero >= maiorNumero){
+            for(Integer numero : numeros) {
+                if (numero >= maiorNumero) {
                     maiorNumero = numero;
                 }
             }
-            return maiorNumero;
-        }else {
-            throw new RuntimeException("A lista está vazia!");
         }
+        return maiorNumero;
     }
-
+    //Verificando o menor numero
     public int menorNumero(){
-        Integer menorNumero = Integer.MAX_VALUE;
+        int menorNumero = 0;
         if(!numeros.isEmpty()){
             for(Integer numero : numeros){
                 if(numero <= menorNumero){
                     menorNumero = numero;
                 }
             }
-            return menorNumero;
-        }else {
-            throw new RuntimeException("A lista está vazia");
         }
+        return menorNumero;
     }
-
+    //exibindo os numeros
     public void exibirNumeros(){
         if(!numeros.isEmpty()){
             System.out.println(this.numeros);

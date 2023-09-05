@@ -33,8 +33,8 @@ public class Item {
     }
     @Override
     public String toString() {
-        return "Produto: Nome= "+getNome()+", Preço= "+
-                getPreco()+", Quantidade= "+getQuantidade();
+        return "Produto: "+getNome()+", Preço: R$"+
+                getPreco()+", Quantidade: "+getQuantidade();
     }
 
 }

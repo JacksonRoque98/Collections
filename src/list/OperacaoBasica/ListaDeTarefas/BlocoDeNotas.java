@@ -6,30 +6,25 @@ public class BlocoDeNotas{
         //Instanciando uma Lista de Tarefas
         ListaTarefa listaTarefa = new ListaTarefa();
 
+        //Verificando elementos na lista
+        System.out.println("O número total de elementos na lista é: "+listaTarefa.obterNumeroTotalTarefas());
+
         //Adicionando descrição a lista de tarefa
-        listaTarefa.adicionarTarefa("Ligar o pc");
-        listaTarefa.adicionarTarefa("Verificar conexão com a internet");
-        listaTarefa.adicionarTarefa("Retornar ao projeto");
+        listaTarefa.adicionarTarefa("Tarefa 1");
+        listaTarefa.adicionarTarefa("Tarefa 1");
+        listaTarefa.adicionarTarefa("Tarefa 2");
+        listaTarefa.adicionarTarefa("Tarefa 3");
 
-        //Exibindo o número total de tarefas da sua lista
-        System.out.println("Você tem "+listaTarefa.obterNumeroTotalTarefas()+" tarefas na lista:");
+        //Verificando elementos na lista
+        System.out.println("O número total de elementos na lista é: "+listaTarefa.obterNumeroTotalTarefas());
 
-        //Exibindo lista de tarefa
+        //Removendo tarefa da lista (remove todas tarefas com essa descrição!)
+        listaTarefa.removerTarefa("Tarefa 1");
+
+        //Verificando elementos na lista
+        System.out.println("O número total de elementos na lista é: "+listaTarefa.obterNumeroTotalTarefas());
+
+        //Obter descrição da tarefa
         listaTarefa.obterDescricaoTarefas();
-
-        //Removendo descrição da lista de tarefas
-        String descricaoExcluida = listaTarefa.removerTarefa("Verificar conexão com a internet");
-
-        //Nova lista de tarefas
-        System.out.println("Voce completou a tarefa: "+descricaoExcluida);
-
-        //Exibindo novo total de tarefas e a nova lista de tarefas.
-        System.out.println("Você tem "+listaTarefa.obterNumeroTotalTarefas()+" tarefas na lista:");
-        listaTarefa.obterDescricaoTarefas();
-
-        //Removendo todas as tarefas
-        listaTarefa.removerTodasTarefas();
-        System.out.println("Você tem "+listaTarefa.obterNumeroTotalTarefas()+" tarefas a serem concluidas!" +
-                " Parabens, você concluiu todas suas tarefas!");
     }
 }

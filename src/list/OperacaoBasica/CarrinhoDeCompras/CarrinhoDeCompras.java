@@ -11,51 +11,29 @@ public class CarrinhoDeCompras {
     }
 
     public void adicionarItem(String nome, double preco, int quantidade){
-        Item item = new Item(nome, preco, quantidade);
-        this.itemList.add(item);
+        this.itemList.add(new Item(nome, preco, quantidade));
     }
 
     public String removerItem(String nome){
-        List<Item> itensParaRemover = new ArrayList<>();
-        if(!itemList.isEmpty()){
-            for(Item i : itemList){
-                if (i.getNome().equalsIgnoreCase(nome)){
-                    itensParaRemover.add(i);
-                }
+        List<Item> itemParaRemover = new ArrayList<>();
+        for(Item i : itemList){
+            if(i.getNome().equalsIgnoreCase(nome)){
+                itemParaRemover.add(i);
             }
-            itemList.removeAll(itensParaRemover);
-        }else{
-            System.out.println("A lista está vazia!");
         }
+        this.itemList.removeAll(itemParaRemover);
         return nome;
     }
 
     public double calcularValorTotal(){
-        double valorTotal = 0d;
-        if(!itemList.isEmpty()){
-            for(Item item : itemList){
-                double valorItem = item.getPreco() * item.getQuantidade();
-                valorTotal += valorItem;
-            }
-            return valorTotal;
-        }else {
-            throw new RuntimeException("A lista está vazia");
+        double valorCompra = 0;
+        for(Item i : itemList){
+            valorCompra = i.getPreco() * i.getQuantidade();
         }
-
+        return valorCompra;
     }
+
     public void exibirItens(){
-        if(!itemList.isEmpty()){
-            System.out.println(this.itemList);
-        }else{
-            System.out.println("A lista está vazia");
-        }
+        System.out.println(itemList);
     }
-
-    @Override
-    public String toString(){
-        return "CarrinhoDeCompras{"+
-                "itens="+itemList+
-                "}";
-    }
-
 }

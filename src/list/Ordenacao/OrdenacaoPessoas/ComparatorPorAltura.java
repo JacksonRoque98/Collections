@@ -1,6 +1,4 @@
-package list.Ordenacao.OrdenacaoNumerica;
-
-import list.Ordenacao.OrdenacaoPessoas.Pessoa;
+package list.Ordenacao.OrdenacaoPessoas;
 
 import java.util.Comparator;
 
@@ -9,5 +7,4 @@ public class ComparatorPorAltura implements Comparator<Pessoa> {
     public int compare(Pessoa p1, Pessoa p2){
         return Double.compare(p1.getAltura(), p2.getAltura());
     }
-
 }

@@ -4,44 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaTarefa {
+    //Atributo
     private List<Tarefa> tarefaList;
 
+    //Construtor
     public ListaTarefa(){
         this.tarefaList = new ArrayList<>();
     }
+
     public void adicionarTarefa(String descricao){
         tarefaList.add(new Tarefa(descricao));
     }
 
-    public String removerTarefa(String descricao){
-        List<Tarefa> tarefasParaRemover = new ArrayList<>();
-        if(!tarefaList.isEmpty()){
-            for(Tarefa t : tarefaList){
-                if(t.getDescricao().equalsIgnoreCase(descricao)){
-                    tarefasParaRemover.add(t);
-                }
+    public void removerTarefa(String descricao){
+        List<Tarefa> tarefaParaRemover = new ArrayList<>();
+        for(Tarefa t : tarefaList){
+            if(t.getDescricao().equalsIgnoreCase(descricao)){
+                tarefaParaRemover.add(t);
             }
-            tarefaList.removeAll(tarefasParaRemover);
-        }else {
-            System.out.println("A lista está vazia!");
         }
-
-        return descricao;
+        tarefaList.removeAll(tarefaParaRemover);
     }
-
-    public void removerTodasTarefas(){
-        System.out.println("Excluindo todas as tarefas.");
-        tarefaList.removeAll(tarefaList);
-    }
-
     public int obterNumeroTotalTarefas(){
         return tarefaList.size();
     }
     public void obterDescricaoTarefas(){
-        if(!tarefaList.isEmpty()){
-            System.out.println(tarefaList);
-        }else {
-            System.out.println("A lista está vazia");
-        }
+        System.out.println(tarefaList);
     }
 }

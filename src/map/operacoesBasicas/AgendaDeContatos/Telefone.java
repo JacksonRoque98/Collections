@@ -1,4 +1,6 @@
-package map.operacoesBasicas;
+package map.operacoesBasicas.AgendaDeContatos;
+
+import map.operacoesBasicas.AgendaDeContatos.AgendaDeContatos;
 
 public class Telefone {
     public static void main(String[] args) {

@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CatalogoDeLivros {
-
+    //Instanciando uma lista de Livros
     private List<Livros> livroList;
-
-    CatalogoDeLivros(){
+    //Instanciando o construtor
+    public CatalogoDeLivros(){
         this.livroList = new ArrayList<>();
     }
-
+    //Adicionando um livro a lista de livros
     public void adicionarLivro(String titulo, String autor, int anoDePublicacao){
         livroList.add(new Livros(titulo, autor, anoDePublicacao));
     }
-
+    //Pesquisando livro por autor
     public List<Livros> pesquisarPorAutor(String autor) {
         List<Livros> livrosPorAutor = new ArrayList<>();
         if (!livroList.isEmpty()) {
@@ -23,24 +23,20 @@ public class CatalogoDeLivros {
                     livrosPorAutor.add(l);
                 }
             }
-            return livrosPorAutor;
-        } else {
-            throw new RuntimeException("A lista está vazia!");
         }
+        return livrosPorAutor;
     }
-
-    public List<Livros> pesquisarIntervaloAnos(int anoInicial, int anoFinal){
-        List<Livros> livrosPorIntervaloAnos = new ArrayList<>();
-        if(!livroList.isEmpty()){
-            for(Livros l : livroList){
-                if(l.getAnoDePublicacao() >= anoInicial && l.getAnoDePublicacao() <= anoFinal){
-                    livrosPorIntervaloAnos.add(l);
+    //Pesquisando livros por intervalo de anos
+    public List<Livros> pesquisarIntervaloAnos(int anoInicial, int anoFinal) {
+        List<Livros> livroPorIntervaloDeAnos = new ArrayList<>();
+        if (!livroList.isEmpty()) {
+            for (Livros l : livroList) {
+                if (l.getAnoDePublicacao() >= anoInicial && l.getAnoDePublicacao() <= anoFinal) {
+                    livroPorIntervaloDeAnos.add(l);
                 }
             }
-            return livrosPorIntervaloAnos;
-        }else {
-            throw new RuntimeException("A lista está vazia");
         }
+        return livroPorIntervaloDeAnos;
     }
 
     public Livros pesquisarPorTitulo(String titulo){
@@ -52,10 +48,8 @@ public class CatalogoDeLivros {
                     break;
                 }
             }
-            return livroPorTitulo;
-        }else{
-            throw new RuntimeException("A lista está vazia");
         }
+        return livroPorTitulo;
     }
 
 }

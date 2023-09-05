@@ -1,4 +1,4 @@
-package set.OperacoesBasicas;
+package set.OperacoesBasicas.Convidados;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class ConjuntoConvidados {
     public void adicionarConvidado(String nome, Integer codigoConvite){
         convidadosSet.add(new Convidados(nome, codigoConvite));
     }
-    public Integer removerConvidadoPorCodigoConvite(Integer codigoConvite){
+    public Integer removerConvidadoPorCodigoConvite(int codigoConvite){
         Convidados convidadoParaRemover = null;
         if(!convidadosSet.isEmpty()){
             for(Convidados c : convidadosSet){
@@ -21,8 +21,6 @@ public class ConjuntoConvidados {
                 }
             }
             convidadosSet.remove(convidadoParaRemover);
-        }else{
-            throw new RuntimeException("O conjunto está vazio!");
         }
         return codigoConvite;
     }
